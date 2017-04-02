@@ -8,7 +8,7 @@
 // @supportURL   https://github.com/ldong/github-copy-text/README.md
 // @match        *://github.com/*
 // @match        *://www.github.com/*
-// @match        *://git.corp*
+// @include      /^https?://git\.corp.*/.*$/
 // @grant        GM_setClipboard
 // @grant        GM_xmlhttpRequest
 // ==/UserScript==
