@@ -19,7 +19,7 @@ Before
 ![](./screenshots/before.png)
 
 After
-![](./Screenshots/after.png)
+![](./screenshots/after.png)
 
 
 # LICENSE

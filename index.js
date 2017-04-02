@@ -4,9 +4,12 @@
 // @version      0.1
 // @description  Add copy github file text to clipboard
 // @author       adong
-// @match        http://.*github.com/.*
+// @match        *://github.com/*
+// @match        *://www.github.com/*
 // @include      *github.com*
 // @include      *git.corp.yahoo.com*
+// @homepageURL  https://github.com/ldong/github-copy-text
+// @supportURL   https://github.com/ldong/github-copy-text/README.md
 // @grant        none
 // ==/UserScript==
 
@@ -37,18 +40,6 @@
     copyButton.addEventListener('click', function(e) {
         e.preventDefault();
         CopyToClipboard('.blob-wrapper.data.type-javascript');
-        // var copyArea = document.querySelector('.blob-wrapper.data.type-javascript');
-        // var copyAreaContent = copyArea.textContent;
-        // copyArea.select();
-
-        // try {
-        //   var successful = document.execCommand('copy');
-        //   var msg = successful ? 'successful' : 'unsuccessful';
-        //   console.log('Copying text command was ' + msg);
-        // } catch (err) {
-        //   console.log('Oops, unable to copy');
-        // }
-
     });
 
 
