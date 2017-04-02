@@ -15,17 +15,17 @@
 
 (function() {
     // copied from http://stackoverflow.com/a/36640126/2305243
-    function CopyToClipboard(selector) {
+    function CopyToClipboard(node) {
         var range;
         if (document.selection) {
             range = document.body.createTextRange();
-            range.moveToElementText(document.querySelector(selector));
+            range.moveToElementText(node);
             range.select().createTextRange();
             document.execCommand("Copy");
 
         } else if (window.getSelection) {
             range = document.createRange();
-            range.selectNode(document.querySelector(selector));
+            range.selectNode(document.querySelector(node));
             window.getSelection().addRange(range);
             document.execCommand("Copy");
             alert("text copied");
@@ -39,7 +39,8 @@
 
     copyButton.addEventListener('click', function(e) {
         e.preventDefault();
-        CopyToClipboard('.blob-wrapper.data.type-javascript');
+        var copyContentNode = document.querySelector(".file > .file-header").nextElementSibling;
+        CopyToClipboard(copyContentNode);
     });
 
 
