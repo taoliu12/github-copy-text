@@ -25,7 +25,7 @@
 
         } else if (window.getSelection) {
             range = document.createRange();
-            range.selectNode(document.querySelector(node));
+            range.selectNode(node);
             window.getSelection().addRange(range);
             document.execCommand("Copy");
             alert("text copied");
