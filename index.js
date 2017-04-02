@@ -1,16 +1,16 @@
 // ==UserScript==
 // @name         Copy github file to clipboard
-// @namespace    github
-// @version      0.1
 // @description  Add copy github file text to clipboard
+// @namespace    org.adong
+// @version      0.1
 // @author       adong
-// @match        *://github.com/*
-// @match        *://www.github.com/*
-// @include      *github.com*
-// @include      *git.corp.yahoo.com*
 // @homepageURL  https://github.com/ldong/github-copy-text
 // @supportURL   https://github.com/ldong/github-copy-text/README.md
-// @grant        none
+// @match        *://github.com/*
+// @match        *://www.github.com/*
+// @match        *://git.corp*
+// @grant        GM_setClipboard
+// @grant        GM_xmlhttpRequest
 // ==/UserScript==
 
 (function() {

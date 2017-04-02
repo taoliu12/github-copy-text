@@ -11,7 +11,7 @@ I was inspired by [Select Code Block Buttons](https://gist.github.com/halirutan/
   * Firefox: Greasemonkey or Tampermonkey
   * Safari: Tampermonkey
 
-2. Click [here](./index.js) to install
+2. Click [here](./index.js) to install, or visit at [greasyfork](https://greasyfork.org/en/scripts/28623-copy-github-file-to-clipboard/code)
 
 ## Screenshots
 
