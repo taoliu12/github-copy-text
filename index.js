@@ -16,7 +16,9 @@
 (function() {
     // copied from http://stackoverflow.com/a/36640126/2305243
     function CopyToClipboard(node) {
+        debugger
         var range;
+        var selection;
         if (document.selection) {
             range = document.body.createTextRange();
             range.moveToElementText(node);
@@ -26,7 +28,10 @@
         } else if (window.getSelection) {
             range = document.createRange();
             range.selectNode(node);
-            window.getSelection().addRange(range);
+            selection = window.getSelection()
+            selection.removeAllRanges();  //https://stackoverflow.com/questions/43260617/selection-addrange-is-deprecated-and-will-be-removed-from-chrome
+            selection.addRange(range);
+
             document.execCommand("Copy");
             alert("text copied");
         }
@@ -39,13 +44,11 @@
 
     copyButton.addEventListener('click', function(e) {
         e.preventDefault();
-        var copyContentNode = document.querySelector(".file > .file-header").nextElementSibling;
+        var copyContentNode = document.querySelector(".Box-body.p-0.blob-wrapper.data.type-text")
         CopyToClipboard(copyContentNode);
     });
 
-
-    var targetButtonGroupClass = '.BtnGroup.float-right';
-    var targetButtonGroup = document.querySelector(targetButtonGroupClass);
+    var targetButtonGroup = document.querySelector('.d-flex.py-1.py-md-0.flex-auto.flex-order-1.flex-md-order-2.flex-sm-grow-0.flex-justify-between')
     if (targetButtonGroup) {
         targetButtonGroup.appendChild(copyButton);
     } else {
